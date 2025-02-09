@@ -45,9 +45,29 @@
         p {
             margin-top: 10px;
             font-size: 1rem;
+            cursor: pointer;
         }
 
-        /* Responsive Design */
+       #btn{
+           padding: 25px;     
+       }
+
+       #btn-1{
+           padding: 6px;
+           border-radius: 6px;
+           cursor: pointer;
+           color: white ; 
+           background-color: rgb(227, 65, 64);
+           transition: background-color 0.3s, box-shadow 0.3s;
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+       }
+
+       #btn-1:hover{
+        color: rgb(0, 0, 0);
+        box-shadow: 0 4px 8px red;
+       }
+         
+        /* Responsive Design For the Images */
         @media (max-width: 600px) {
             #cute {
                 font-size: 1.5rem;
@@ -67,6 +87,10 @@
             <img src="Cat.jpeg" alt="Cute Cat"> 
         </a>  
         <p>Don't Click on the Image!</p>
+        <!-- Buttons -->
+        <div id = btn>
+           <button id = btn-1> Click to Reveal</button>
+        </div>
     </div>
 </body>
 </html>
