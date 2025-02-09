@@ -3,34 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
- <style>
-    #Cute{
-         color: brown;
-         cursor: pointer;
-         margin-left: 450px;
-         margin-top: 100px;
-         transition: color 0.2s ease-in-out, font-size 0.5s ease-in-out;    
-    }
-    #Cute:hover{
-         color: purple;
-         transform: scale(1.5); 
-         margin-left: 550px;
-    }
-   
-.img{
-    margin-left: 500px;
+    <title>Are You Cute?</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-}
- </style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+            padding: 20px;
+        }
+
+        #cute {
+            color: brown;
+            cursor: pointer;
+            margin-bottom: 30px;
+            transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+        }
+
+        #cute:hover {
+            color: purple;
+            transform: scale(1.2);
+        }
+
+        .img-container {
+           
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .img-container img {
+            border: 5px solid black;
+            padding: 15px;
+            max-width: 500px; 
+            height: auto;
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            #cute {
+                font-size: 1.5rem;
+            }
+
+            .img-container img {
+                width: 100%; /* Adjusts for small screens */
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1 id = Cute>
-        HEY LETS CHECK U ARE CUTIE OR NOT 
-    </h1>
-    <div class="img">
-
-      <a href="catt.html"> <img src="Cat.jpeg" alt=""> </a>  
+    <h1 id="cute">HEY, LET'S CHECK IF YOU ARE A CUTIE OR NOT!</h1>
+    
+    <div class="img-container">
+        <a href="catt.html"> 
+            <img src="Cat.jpeg" alt="Cute Cat"> 
+        </a>  
+        <p>Don't Click on the Image!</p>
     </div>
 </body>
 </html>
