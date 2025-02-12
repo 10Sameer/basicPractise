@@ -3,26 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        div{
-            margin-top: 85px;
-            margin-left: 420px;
+    <title>Responsive Design</title>
+    <style>  
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 85vh;
+        
+            background-color: #f5f5f5;
         }
-        .con{
-            border: solid 4px black;
+        .con {
+            border: solid 2px black;
             padding: 15px;
-            max-width: 43%;
+            max-width: 90%;
+            width: 520px; 
+            text-align: center;
+            background: white;
+        }
+        img {
+            max-width: 100%; 
             height: auto;
-            display: block;
-           
+        }
+        
+        @media (max-width: 600px) {
+            .con {
+                width: 90%; 
+            }
         }
     </style>
 </head>
 <body>
-      <div class="con">
-        <img src="chimp.png" alt="">
-        <p>Baasi hai....Level pugena haii baasi</p>
-      </div>
+    <div class="con">
+        <img src="chimp.png" alt="Chimp Image">
+        <p>Baasi hai....Level pugena haii baasi...Cute reee khubaii...Wooow nice haii Nice</p>
+    </div>
 </body>
 </html>
