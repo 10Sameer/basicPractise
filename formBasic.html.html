@@ -71,6 +71,39 @@
     </form>
 </div>
 
+<script>
+    function validateForm() {
+        var usernameInput = document.getElementById("username").value;
+        var usernameError = document.getElementById("usernameError");
+        var usernamePattern = /^[a-zA-Z]+$/;
+
+        if (usernameInput === "") {
+            alert("The name cannt be empty");
+            return false;
+        } else if (!usernamePattern.test(usernameInput)) {
+            usernameError.textContent = "Username must contain only letters";
+            return false;
+        } else {
+            usernameError.textContent = "";
+        }
+
+        var numberInput = document.getElementById("number").value;
+        var numberError = document.getElementById("numberError");
+        var numberPattern = /^[0-9]+$/;
+
+        if (numberInput === "") {
+            numberError.textContent = "Number can't be empty";
+            return false;
+        } else if (!numberPattern.test(numberInput)) {
+            alert("The name cannt be empty");
+            return false;
+        } else {
+            numberError.textContent = "";
+        }
+
+        return true;
+    }
+</script>
 
 </body>
 </html>
