@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Styled Form</title>
+    <title>Responsive Form with Validation</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -10,13 +10,15 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin: 0;
         }
         .container {
             background: white;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 350px;
+            width: 90%;
+            max-width: 400px;
         }
         label {
             font-weight: bold;
@@ -24,8 +26,8 @@
             margin-top: 10px;
         }
         input, select {
-            width: 95%;
-            padding: 8px;
+            width: 100%;
+            padding: 10px;
             margin-top: 5px;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -43,17 +45,45 @@
         button:hover {
             background: #218838;
         }
-        @media (max-width: 400px) {
+        @media (max-width: 600px) {
             .container {
                 width: 95%;
                 padding: 15px;
             }
         }
     </style>
+    <script>
+        function validateForm(event) {
+            const name = document.getElementById('name').value.trim();
+            const address = document.getElementById('address').value.trim();
+            const number = document.getElementById('number').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phonePattern = /^[0-9]{10}$/;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const namePattern = /^[A-Za-z ]{3,}$/;
+
+            if (!namePattern.test(name)) {
+                alert('Name must be at least 3 characters long and contain only letters and spaces.');
+                event.preventDefault();
+                return false;
+            }
+            if (!phonePattern.test(number)) {
+                alert('Please enter a valid 10-digit phone number.');
+                event.preventDefault();
+                return false;
+            }
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                event.preventDefault();
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 <body>
     <div class="container">
-        <form action="submit_form.php" method="post">
+        <form action="submit_form.php" method="post" onsubmit="return validateForm(event)">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -62,9 +92,6 @@
 
             <label for="number">Phone Number:</label>
             <input type="tel" id="number" name="number" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
 
             <label for="job">Job:</label>
             <select id="job" name="job" required>
@@ -84,31 +111,11 @@
                 <option value="other">Other</option>
             </select>
 
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
             <button type="submit">Submit</button>
         </form>
     </div>
-    <script>
-        function validateForm(event) {
-            const name = document.getElementById('name').value.trim();
-            const address = document.getElementById('address').value.trim();
-            const number = document.getElementById('number').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const phonePattern = /^[0-9]{10}$/;
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-            if (!phonePattern.test(number)) {
-                alert('Please enter a valid 10-digit phone number.');
-                event.preventDefault();
-                return false;
-            }
-            if (!emailPattern.test(email)) {
-                alert('Please enter a valid email address.');
-                event.preventDefault();
-                return false;
-            }
-            return true;
-        }
-    </script>
 </body>
 </html>
