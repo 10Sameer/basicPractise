@@ -88,5 +88,27 @@
             <button type="submit">Submit</button>
         </form>
     </div>
+    <script>
+        function validateForm(event) {
+            const name = document.getElementById('name').value.trim();
+            const address = document.getElementById('address').value.trim();
+            const number = document.getElementById('number').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phonePattern = /^[0-9]{10}$/;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!phonePattern.test(number)) {
+                alert('Please enter a valid 10-digit phone number.');
+                event.preventDefault();
+                return false;
+            }
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                event.preventDefault();
+                return false;
+            }
+            return true;
+        }
+    </script>
 </body>
 </html>
