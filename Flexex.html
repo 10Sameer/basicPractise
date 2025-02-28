@@ -4,7 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Flexbox Example</title>
+    <style>
+        .flex-container {
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            gap: 10px; 
+            background-color: #f4f4f4;
+            padding: 20px;
+            height: 300px;
+            flex-wrap: wrap; /* helps to show all the contain if necessary */
+        }
 
+        .flex-item {
+            background-color: #e74c3c;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            font-size: 20px;
+            border-radius: 5px;
+            width: 100px;
+        }
+    </style>
 </head>
 <body>
 
