@@ -276,8 +276,74 @@
             createBalloonBursts();
         });
         
-       
-     
+        // Create floating balloons flood
+        function createBalloonFlood() {
+            // Create initial wave of balloons
+            for (let i = 0; i < 100; i++) {
+                setTimeout(() => {
+                    createBalloon();
+                }, i * 100);
+            }
+            
+            // Continue creating balloons
+            setTimeout(() => {
+                for (let i = 0; i < 75; i++) {
+                    setTimeout(() => {
+                        createBalloon(true);
+                    }, i * 150);
+                }
+            }, 3000);
+        }
+        
+        function createBalloon(diagonal = false) {
+            const balloon = document.createElement('div');
+            balloon.classList.add('balloon');
+            
+            const color = balloonColors[Math.floor(Math.random() * balloonColors.length)];
+            balloon.style.backgroundColor = color;
+            
+            if (diagonal) {
+                balloon.style.left = Math.random() * 50 + 25 + 'vw';
+            } else {
+                balloon.style.left = Math.random() * 100 + 'vw';
+            }
+            
+            balloon.style.animationDuration = 6 + Math.random() * 4 + 's';
+            floatingElements.appendChild(balloon);
+            
+            setTimeout(() => {
+                balloon.remove();
+            }, 10000);
+        }
+        
+        // Create floating hearts flood
+        function createHeartFlood() {
+            const heartStyles = [
+                { color: '#ff4081', size: '24px' },
+                { color: '#d81b60', size: '30px' },
+                { color: '#ff79b0', size: '20px' },
+                { color: '#ff1493', size: '28px' }
+            ];
+            
+            // Create initial wave of hearts
+            for (let i = 0; i < 200; i++) {
+                setTimeout(() => {
+                    createHeart(heartStyles);
+                }, i * 50);
+            }
+            
+            // Continue creating hearts with different patterns
+            setTimeout(() => {
+                for (let i = 0; i < 150; i++) {
+                    setTimeout(() => {
+                        createHeart(heartStyles, true);
+                    }, i * 40);
+                }
+            }, 3000);
+        }
+        
+      
+    
     </script>
 </body>
 </html>
