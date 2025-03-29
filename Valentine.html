@@ -342,7 +342,29 @@
             }, 3000);
         }
         
-      
+        function createHeart(styles, diagonal = false) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            
+            const style = styles[Math.floor(Math.random() * styles.length)];
+            heart.style.color = style.color;
+            heart.style.fontSize = style.size;
+            
+            if (diagonal) {
+                heart.style.left = Math.random() * 50 + 25 + 'vw';
+            } else {
+                heart.style.left = Math.random() * 100 + 'vw';
+            }
+            
+            heart.style.animationDuration = 3 + Math.random() * 3 + 's';
+            floatingElements.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 4000);
+        }
+        
     
     </script>
 </body>
