@@ -394,7 +394,34 @@
             });
         }
         
-  
+        function createBalloonBursts() {
+            const burstPositions = [
+                { x: 10, y: 20 },
+                { x: 90, y: 30 },
+                { x: 60, y: 80 },
+                { x: 40, y: 50 },
+                { x: 80, y: 20 }
+            ];
+            
+            burstPositions.forEach((pos, index) => {
+                setTimeout(() => {
+                    for (let i = 0; i < 5; i++) {
+                        const burst = document.createElement('div');
+                        burst.classList.add('balloon-burst');
+                        burst.innerHTML = '🎈';
+                        burst.style.left = pos.x + 'vw';
+                        burst.style.top = pos.y + 'vh';
+                        burst.style.color = balloonColors[Math.floor(Math.random() * balloonColors.length)];
+                        burst.style.animationDelay = i * 0.2 + 's';
+                        floatingElements.appendChild(burst);
+                        
+                        setTimeout(() => {
+                            burst.remove();
+                        }, 2000);
+                    }
+                }, index * 1000);
+            });
+        }
     </script>
 </body>
 </html>
