@@ -215,6 +215,69 @@
         </div>
     </div>
 
- 
+    <script>
+        const noBtn = document.getElementById('noBtn');
+        const yesBtn = document.getElementById('yesBtn');
+        const response = document.getElementById('response');
+        const floatingElements = document.getElementById('floatingElements');
+        const buttonsContainer = document.querySelector('.buttons');
+        
+        // Balloon colors
+        const balloonColors = [
+            '#ff4081', '#d81b60', '#ff79b0', '#ff1493',
+            '#4caf50', '#8bc34a', '#cddc39', '#ffeb3b',
+            '#ff9800', '#ff5722', '#9c27b0', '#673ab7',
+            '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4'
+        ];
+        
+        // Make No button run away in all directions when hovered
+        noBtn.addEventListener('mouseover', (e) => {
+            moveButtonRandomly();
+        });
+        
+        // Smooth random movement in all directions
+        function moveButtonRandomly() {
+            const maxDistance = 150; // Maximum distance to move in pixels
+            const containerRect = buttonsContainer.getBoundingClientRect();
+            const btnRect = noBtn.getBoundingClientRect();
+            
+            // Generate random X and Y offsets (-value to +value)
+            const randomX = (Math.random() * maxDistance * 2) - maxDistance;
+            const randomY = (Math.random() * maxDistance * 2) - maxDistance;
+            
+            // Apply smooth movement
+            noBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
+            
+            // Continue moving if mouse is still over button
+            setTimeout(() => {
+                if (noBtn.matches(':hover')) {
+                    moveButtonRandomly();
+                }
+            }, 500);
+        }
+        
+        // Reset position when mouse leaves button area
+        buttonsContainer.addEventListener('mouseleave', () => {
+            noBtn.style.transform = 'translate(0, 0)';
+        });
+        
+        // Yes button action
+        yesBtn.addEventListener('click', () => {
+            response.classList.remove('hidden');
+            yesBtn.classList.add('hidden');
+            noBtn.classList.add('hidden');
+            
+            // Create massive heart and balloon flood
+            createHeartFlood();
+            createBalloonFlood();
+            
+            // Add burst effects
+            createHeartBursts();
+            createBalloonBursts();
+        });
+        
+       
+     
+    </script>
 </body>
 </html>
