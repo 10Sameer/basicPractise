@@ -365,7 +365,36 @@
             }, 4000);
         }
         
-    
+        function createHeartBursts() {
+            const burstPositions = [
+                { x: 20, y: 30 },
+                { x: 80, y: 40 },
+                { x: 50, y: 70 },
+                { x: 30, y: 60 },
+                { x: 70, y: 30 }
+            ];
+            
+            burstPositions.forEach((pos, index) => {
+                setTimeout(() => {
+                    for (let i = 0; i < 8; i++) {
+                        const burst = document.createElement('div');
+                        burst.classList.add('heart-burst');
+                        burst.innerHTML = '❤️';
+                        burst.style.left = pos.x + 'vw';
+                        burst.style.top = pos.y + 'vh';
+                        burst.style.color = `hsl(${Math.random() * 60 + 330}, 100%, 70%)`;
+                        burst.style.animationDelay = i * 0.1 + 's';
+                        floatingElements.appendChild(burst);
+                        
+                        setTimeout(() => {
+                            burst.remove();
+                        }, 2000);
+                    }
+                }, index * 800);
+            });
+        }
+        
+  
     </script>
 </body>
 </html>
