@@ -1,29 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discord Login</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discord Login</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #36393f;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      
+      .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+      
+      .login-box {
+        background-color: #2f3136;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        width: 300px;
+        text-align: center;
+      }
+      
+      h2 {
+        color: #fff;
+        margin-bottom: 20px;
+      }
+  </style>
 </head>
+
 <body>
-    <div class="login-container">
-        <div class="login-box">
-            <img src="discord-logo.png" alt="Discord Logo" class="logo">
-            <h2>Login</h2>
-            <form action="/login" method="POST">
-                <div class="input-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required>
-                </div>
-                <div class="input-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <button type="submit" class="login-btn">Log In</button>
-                <p class="signup-link">Don't have an account? <a href="#">Sign Up</a></p>
-            </form>
+  <div class="login-container">
+    <div class="login-box">
+      <h2>Login to Discord</h2>
+      <form id="login-form">
+        <div class="input-group">
+          <input type="text" id="username" placeholder="Username" required>
         </div>
+        <div class="input-group">
+          <input type="password" id="password" placeholder="Password" required>
+        </div>
+        <button type="submit" class="login-btn">Login</button>
+        <p class="error-message" id="error-message"></p>
+      </form>
     </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
