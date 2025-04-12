@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Surprise</title>
+ 
+</head>
+<body>
+
+<button id="birthday-btn">Click Me 🎉</button>
+
+<div id="message">🎉 HAPPY BIRTHDAY TO YOU 🎉</div>
+
+<div id="cake">
+  <div id="candles">
+    <div class="candle"><div class="flame">🕯️</div></div>
+    <div class="candle"><div class="flame">🕯️</div></div>
+    <div class="candle"><div class="flame">🕯️</div></div>
+    <div class="candle"><div class="flame">🕯️</div></div>
+    <div class="candle"><div class="flame">🕯️</div></div>
+  </div>
+  🎂
+</div>
+
+<script>
+  const btn = document.getElementById('birthday-btn');
+  const message = document.getElementById('message');
+  const cake = document.getElementById('cake');
+  const candles = document.querySelectorAll('.candle');
+
+  btn.addEventListener('click', () => {
+    btn.style.display = 'none';
+    message.style.display = 'block';
+    cake.style.display = 'block';
+
+    // Balloons
+    for (let i = 0; i < 30; i++) {
+      let balloon = document.createElement('div');
+      balloon.classList.add('balloon');
+      balloon.style.left = Math.random() * window.innerWidth + 'px';
+      balloon.style.backgroundColor = getRandomColor();
+      balloon.style.animationDuration = (Math.random() * 2 + 3) + 's';
+      document.body.appendChild(balloon);
+      setTimeout(() => balloon.style.opacity = 1, 100);
+    }
+
+  
+
+
+ 
+</script>
+
+</body>
+</html>
