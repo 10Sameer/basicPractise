@@ -59,7 +59,35 @@
       cursor: pointer;
     }
 
-    
+    .flame {
+      color: orange;
+      font-size: 30px;
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: opacity 1s ease;
+    }
+
+    .balloon, .sparkle {
+      position: absolute;
+      width: 40px;
+      height: 60px;
+      background: red;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      animation: float 5s linear infinite;
+      opacity: 0;
+    }
+
+    .sparkle {
+      width: 20px;
+      height: 20px;
+      background: gold;
+      border-radius: 50%;
+      box-shadow: 0 0 10px gold, 0 0 20px yellow;
+      animation: sparkle 3s linear infinite;
+    }
+
   </style>
 </head>
 <body>
