@@ -3,7 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <title>Happy Birthday Surprise</title>
- 
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fffaf0;
+      font-family: 'Comic Sans MS', cursive;
+      overflow: hidden;
+    }
+    #birthday-btn {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px 40px;
+      font-size: 24px;
+      background: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    }
+
+    #message {
+      display: none;
+      position: absolute;
+      top: 10%;
+      width: 100%;
+      text-align: center;
+      font-size: 48px;
+      color: #ff1493;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    #cake {
+      display: none;
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 100px;
+      text-align: center;
+    }
+
+    .candle {
+      display: inline-block;
+      margin: 0 8px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    
+  </style>
 </head>
 <body>
 
