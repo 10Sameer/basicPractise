@@ -55,7 +55,30 @@
     }
   });
 
- 
+  candles.forEach(candle => {
+    candle.addEventListener('click', () => {
+      const flame = candle.querySelector('.flame');
+      flame.style.opacity = 0;
+
+      // Spray effect per candle
+      for (let i = 0; i < 10; i++) {
+        let spray = document.createElement('div');
+        spray.classList.add('spray');
+        const rect = candle.getBoundingClientRect();
+        spray.style.left = rect.left + rect.width / 2 + 'px';
+        spray.style.top = rect.top + 'px';
+        spray.style.setProperty('--x', Math.random());
+        spray.style.backgroundColor = getRandomColor();
+        document.body.appendChild(spray);
+        setTimeout(() => spray.remove(), 2000);
+      }
+    });
+  });
+
+  function getRandomColor() {
+    const colors = ['#ff4d4d', '#ffcc00', '#66ff66', '#66b3ff', '#ff99ff', '#ff9966', '#f0f'];
+    return colors[Math.floor(Math.random() * colors.length)];
+  }
 </script>
 
 </body>
