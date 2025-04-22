@@ -169,6 +169,40 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
+
+        .view-btn {
+            display: block;
+            text-align: center;
+            background-color: #783b31;
+            color: white;
+            padding: 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .view-btn:hover {
+            background-color: #62302a;
+        }
+        
+        .view-all {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .about-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        @media (max-width: 768px) {
+            .about-section {
+                grid-template-columns: 1fr;
+            }
+        }
+        
         </style>
  
 </head>
