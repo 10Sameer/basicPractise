@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Facebook Clone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body */
+  body {
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .search-box {
+    margin-left: 10px;
+    padding: 8px;
+    border-radius: 20px;
+    border: none;
+    background: #f0f2f5;
+
+    width: 200px;
+  }
+  
+  .navbar-center a {
+    margin: 0 15px;
+    font-size: 24px;
+    color: gray;
+    text-decoration: none;
+  }
+  
+  .navbar-right .profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  /* Main Content Layout */
+  .main-content {
+    display: flex;
+    padding: 20px;
+  }
+  
+  /* Left Sidebar */
+  .sidebar-left {
+    flex: 1;
+    max-width: 250px;
+  }
+  
+  .sidebar-left a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+  
+  .sidebar-left a:hover {
+    background: #e4e6eb;
+  }
+  
+  /* Feed */
+  .feed {
+    flex: 2;
+    margin: 0 20px;
+  }
+  
+  .post {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+  }
+  
+  .post-user {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .post-content h4 {
+    margin-bottom: 5px;
+  }
+  
+  /* Right Sidebar */
+  .sidebar-right {
+    flex: 1;
+    max-width: 250px;
+  }
+  
+  .contact {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 1000px) {
+    .sidebar-left, .sidebar-right {
+      display: none;
+    }
+    
+    .feed {
+      margin: 0;
+    }
+    
+    .search-box {
+      width: 120px;
+      background-color: black;
+      color: black;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .navbar-center a {
+      margin: 0 5px;
+      font-size: 20px;
+    }
+    
+    .search-box {
+      display: none;
+      
+    }
+  }
+  
+</style>
+<body>
+
+<!-- Top Navbar -->
+<header class="navbar">
+  <div class="navbar-left">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" class="logo">
+    <input type="text" placeholder="Search Facebook" class="search-box">
+  </div>
+  <div class="navbar-center">
+    <a href="#">🏠</a>
+    <a href="#">🎥</a>
+    <a href="#">🛒</a>
+    <a href="#">👥</a>
+    <a href="#">🕹️</a>
+  </div>
+  <div class="navbar-right">
+    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile" class="profile-pic">
+  </div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+  <!-- Left Sidebar -->
+  <aside class="sidebar-left">
+    <a href="#">Home</a>
+    <a href="#">Friends</a>
+    <a href="#">Groups</a>
+    <a href="#">Marketplace</a>
+    <a href="#">Watch</a>
+  </aside>
+
+  <!-- Center Feed -->
+  <section class="feed">
+    <div class="post">
+      <img src="Sameer.jpg" alt="User" class="post-user">
+      <div class="post-content">
+        <h4>Sameer Bhandari</h4>
+        <p>Learning To code🌞 #Blessed</p>
+      </div>
+    </div>
+
+    <div class="post">
+      <img src="Messi.jpg" alt="User" class="post-user">
+      <div class="post-content">
+        <h4>Messi</h4>
+        <p>Playing Football! #ImtheGOAT</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Right Sidebar -->
+  <aside class="sidebar-right">
+    <h4>Contacts</h4>
+    <div class="contact">Rawal</div>
+    <div class="contact">Ojha</div>
+    <div class="contact">Kc</div>
+    <div class="contact">Chimse</div>
+    <div class="contact">NS</div>
+    <div class="contact">Iiku</div>
+  </aside>
+</main>
+
+</body>
+</html>
