@@ -124,7 +124,27 @@
     </div>
     <div class="message" id="message">🎉 Happy Birthday! 🎂</div>
   </div>
+  <script>
+    let blown = 0;
 
+    function blow(candle) {
+      const flame = candle.querySelector('.flame');
+      if (!flame.classList.contains('off')) {
+        flame.classList.add('off');
+        blown++;
+        if (blown === 3) {
+          setTimeout(showMessage, 500);
+        }
+      }
+    }
+
+    function showMessage() {
+      document.getElementById('message').classList.add('show');
+      launchFloatingEmojis();
+    }
+
+
+  </script>
 
 </body>
 </html>
