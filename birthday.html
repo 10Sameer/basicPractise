@@ -3,7 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <title>Happy Birthday</title>
+  <style>
+    body {
+      margin: 0;
+      background: #1a1a1a;
+      color: white;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+    }
 
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .cake-container {
+      position: relative;
+      font-size: 100px;
+    }
+
+    .cake {
+      position: relative;
+    }
+
+    .candles {
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 40px;
+    }
+
+    .candle {
+      width: 20px;
+      height: 60px;
+      background: #ff8c00;
+      border-radius: 5px;
+      position: relative;
+      cursor: pointer;
+    }
+
+  </style>
 </head>
 <body>
   <div class="container">
