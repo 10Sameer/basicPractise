@@ -79,6 +79,30 @@
       transition: opacity 1s ease, transform 1s ease;
     }
 
+    .message.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .floating {
+      position: absolute;
+      font-size: 40px;
+      animation: floatRandom 10s linear forwards;
+      z-index: 10;
+    }
+
+    @keyframes floatRandom {
+      0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(
+          calc(-100vw + 200px + (200vw * var(--rand-x))),
+          calc(-100vh + 200px + (200vh * var(--rand-y)))
+        ) scale(1.5);
+      }
     }
   </style>
 </head>
