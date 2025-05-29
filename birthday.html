@@ -143,7 +143,27 @@
       launchFloatingEmojis();
     }
 
+    function launchFloatingEmojis() {
+      const emojis = ["💖", "🎈", "🎁"];
+      for (let i = 0; i < 100; i++) {
+        const elem = document.createElement('div');
+        elem.className = 'floating';
+        elem.textContent = emojis[Math.floor(Math.random() * emojis.length)];
 
+        // Random start position
+        const startX = Math.random() * window.innerWidth;
+        const startY = Math.random() * window.innerHeight;
+        elem.style.left = `${startX}px`;
+        elem.style.top = `${startY}px`;
+
+        // Random direction factors
+        elem.style.setProperty('--rand-x', `${Math.random() - 0.5}`);
+        elem.style.setProperty('--rand-y', `${-Math.random()}`);
+
+        document.body.appendChild(elem);
+        setTimeout(() => elem.remove(), 10000);
+      }
+    }
   </script>
 
 </body>
