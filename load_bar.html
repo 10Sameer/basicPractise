@@ -99,6 +99,27 @@
   <div class="message" id="message">🎉 Congratulations! 🎉</div>
   <button id="tryAgain">Try Again</button>
 
+  <script>
+    const pressBtn = document.getElementById('pressBtn');
+    const progressBar = document.getElementById('progressBar');
+    const progressContainer = document.getElementById('progressContainer');
+    const message = document.getElementById('message');
+    const tryAgain = document.getElementById('tryAgain');
+
+    let interval;
+    let progress = 0;
+
+    function resetAll() {
+      progress = 0;
+      progressBar.style.width = '0%';
+      message.style.display = 'none';
+      tryAgain.style.display = 'none';
+      pressBtn.style.display = 'inline-block';
+      progressContainer.style.display = 'none';
+      document.querySelectorAll('.balloon').forEach(b => b.remove());
+    }
+
+ 
 
 
 </body>
