@@ -132,6 +132,28 @@
       }
     }
 
+    pressBtn.addEventListener('mousedown', () => {
+      progressContainer.style.display = 'block';
+      interval = setInterval(() => {
+        if (progress < 100) {
+          progress += 1;
+          progressBar.style.width = progress + '%';
+        } else {
+          clearInterval(interval);
+          pressBtn.style.display = 'none';
+          message.style.display = 'block';
+          tryAgain.style.display = 'inline-block';
+          showBalloons();
+        }
+      }, 50);
+    });
+
+    document.addEventListener('mouseup', () => {
+      clearInterval(interval);
+    });
+
+    tryAgain.addEventListener('click', resetAll);
+  </script>
 
 </body>
 </html>
