@@ -35,6 +35,27 @@
       100% { transform: scale(1); }
     }
 
+    #secondLine {
+      display: flex;
+      gap: 10px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .word {
+      font-size: 4rem;
+      opacity: 0;
+      transform: scale(0);
+      animation-fill-mode: forwards;
+      margin: 0 20px;
+      display: inline-block;
+    }
+
+    @keyframes flipWord {
+      0% { transform: scale(0) rotateY(0); opacity: 0; }
+      100% { transform: scale(1.2) rotateY(360deg); opacity: 1; color: plum; }
+    }
   </style>
 </head>
 <body>
