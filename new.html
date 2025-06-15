@@ -111,6 +111,23 @@
       }, 1000);
     });
 
+    function delay(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    function startCelebration() {
+      const emojis = ["🎈", "🎁", "🌸", "💐", "🎊", "🌷", "💝", "🎉", "🌻", "🪅"];
+      for (let i = 0; i < 200; i++) {
+        const emoji = document.createElement("div");
+        emoji.className = "emoji";
+        emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        emoji.style.left = `${Math.random() * 100}vw`;
+        emoji.style.top = `${Math.random() * 100}vh`;
+        emoji.style.animationDuration = `${3 + Math.random() * 3}s`;
+        document.body.appendChild(emoji);
+        setTimeout(() => emoji.remove(), 7000);
+      }
+    }
   </script>
 
 </body>
