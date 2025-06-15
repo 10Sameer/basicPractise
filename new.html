@@ -93,6 +93,24 @@
     const phrase = ["SAMEER", "BHANDARI"];
     const phraseAnims = ["flipWord", "twistWord"];
 
+    startBtn.addEventListener("click", async () => {
+      startBtn.style.display = "none";
+
+      for (let i = 0; i < phrase.length; i++) {
+        const word = document.createElement("span");
+        word.className = "word";
+        word.style.animation = `${phraseAnims[i]} 1s ease forwards`;
+        word.style.animationDelay = `${i * 0.6}s`;
+        word.innerText = phrase[i] + " ";
+        secondLine.appendChild(word);
+        await delay(600);
+      }
+
+      setTimeout(() => {
+        startCelebration();
+      }, 1000);
+    });
+
   </script>
 
 </body>
