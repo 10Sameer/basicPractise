@@ -56,6 +56,29 @@
       0% { transform: scale(0) rotateY(0); opacity: 0; }
       100% { transform: scale(1.2) rotateY(360deg); opacity: 1; color: plum; }
     }
+
+    @keyframes twistWord {
+      0% { transform: scale(0) rotateX(0); opacity: 0; }
+      100% { transform: scale(1.2) rotateX(720deg); opacity: 1; color: coral; }
+    }
+
+    .emoji {
+      position: absolute;
+      font-size: 2rem;
+      animation: floatUp 7s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
