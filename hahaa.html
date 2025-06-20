@@ -94,6 +94,24 @@
       position: relative;
     }
 
+    .emoji {
+      position: fixed;
+      font-size: 30px;
+      pointer-events: none;
+      animation: fly 4s linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes fly {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
