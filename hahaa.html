@@ -191,6 +191,14 @@
       }, 60);
     }
 
+    function startEmojiRain() {
+      const emojis = ['😂', '🤣', '😆', '😹', '😄', '😜'];
+      let emojiCount = 0;
+
+      const interval = setInterval(() => {
+        const emoji = document.createElement('div');
+        emoji.classList.add('emoji');
+        emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
 
   </script>
 
