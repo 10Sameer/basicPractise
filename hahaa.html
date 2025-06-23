@@ -200,6 +200,23 @@
         emoji.classList.add('emoji');
         emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
 
+        // random horizontal position outside video bounds
+        const vidRect = video.getBoundingClientRect();
+        const xPos = Math.random() * window.innerWidth;
+        if (xPos > vidRect.left && xPos < vidRect.right) return; 
+
+        emoji.style.left = `${xPos}px`;
+        emoji.style.bottom = '-30px';
+        document.body.appendChild(emoji);
+
+        setTimeout(() => {
+          emoji.remove();
+        }, 4000);
+
+        emojiCount++;
+        if (emojiCount > 100) clearInterval(interval);
+      }, 100);
+    }
   </script>
 
 </body>
