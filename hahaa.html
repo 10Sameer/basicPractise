@@ -145,7 +145,36 @@
     const msg = document.getElementById('cutieMsg');
     const video = document.getElementById('videoPlayer');
 
-  
+    const videoLoader = document.getElementById('videoLoader');
+    const videoLoaderWrapper = document.getElementById('videoLoaderWrapper');
+    const videoLoadingText = document.getElementById('videoLoadingText');
+
+    btn.onclick = () => {
+      btn.disabled = true;
+      loaderWrapper.style.display = 'block';
+      loadingText.style.display = 'block';
+
+      let progress = 0;
+      const interval = setInterval(() => {
+        if (progress >= 100) {
+          clearInterval(interval);
+          loadingText.innerText = "Loaded!";
+          msg.style.display = 'block';
+
+          setTimeout(() => {
+            videoLoaderWrapper.style.display = 'block';
+            videoLoadingText.style.display = 'block';
+            loadVideo();
+          }, 2000);
+        } else {
+          progress += 2;
+          loader.style.width = progress + '%';
+          loadingText.innerText = `Revealing... ${progress}%`;
+        }
+      }, 100);
+    };
+
+ 
   </script>
 
 </body>
