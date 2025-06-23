@@ -174,7 +174,24 @@
       }, 100);
     };
 
- 
+    function loadVideo() {
+      let videoProgress = 0;
+      const videoInterval = setInterval(() => {
+        if (videoProgress >= 100) {
+          clearInterval(videoInterval);
+          videoLoadingText.innerText = "Video Ready!";
+          video.style.display = 'block';
+          video.play();
+          startEmojiRain();
+        } else {
+          videoProgress += 2;
+          videoLoader.style.width = videoProgress + '%';
+          videoLoadingText.innerText = `Preparing video... ${videoProgress}%`;
+        }
+      }, 60);
+    }
+
+
   </script>
 
 </body>
