@@ -28,7 +28,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Set parameters
             $param_username = trim($_POST["username"]);
             
-           
+            // Attempt to execute the prepared statement
+            if ($stmt->execute()) {
+                // Store result
+                $stmt->store_result();
+                
+                if ($stmt->num_rows == 1) {
+                    $username_err = "This username is already taken.";
+                } else {
+                    $username = trim($_POST["username"]);
+                }
+            } else {
+                echo "Oops! Something went wrong. Please try again later.";
+            }
+
+            // Close statement
+            $stmt->close();
+        }
+    }
+
 ?>
 
 <!DOCTYPE html>
