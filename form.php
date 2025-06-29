@@ -60,7 +60,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
             // Set parameters
             $param_email = trim($_POST["email"]);
-          
+            
+            // Attempt to execute the prepared statement
+            if ($stmt->execute()) {
+                // Store result
+                $stmt->store_result();
+                
+                if ($stmt->num_rows == 1) {
+                    $email_err = "This email is already registered.";
+                } else {
+                    $email = trim($_POST["email"]);
+                }
+            } else {
+                echo "Oops! Something went wrong. Please try again later.";
+            }
+
+            // Close statement
+            $stmt->close();
+        }
+    }
 
 ?>
 
