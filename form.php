@@ -1,3 +1,18 @@
+<?php
+session_start();
+include '_dbconnect.php';
+
+// Check if user is already logged in
+if (isset($_SESSION['user_id'])) {
+    header("Location: index.php");
+    exit;
+}
+
+$username = $email = $password = $confirm_password = "";
+$username_err = $email_err = $password_err = $confirm_password_err = "";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,13 +39,11 @@
                 <label>Full Name (Optional)</label>
                 <input type="text" name="full_name" class="form-control">
             </div>
-            
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <label>Password</label>
                 <input type="password" name="password" class="form-control" value="<?php echo $password; ?>">
                 <span class="help-block"><?php echo $password_err; ?></span>
             </div>
-
             <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
                 <label>Confirm Password</label>
                 <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
