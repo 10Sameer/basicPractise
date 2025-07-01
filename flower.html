@@ -158,6 +158,27 @@
             filter: blur(0.5px);
             opacity: 0.9;
         }
+        
+        .water-drops {
+            position: absolute;
+            width: 10px;
+            height: 150px;
+            left: 150px;
+            bottom: 200px;
+            z-index: 3;
+            overflow: visible;
+            display: none;
+        }
+        
+        .drop {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background-color: rgba(100, 149, 237, 0.8);
+            border-radius: 50%;
+            animation: falling 1.5s linear infinite;
+            opacity: 0;
+        }
 
     </style>
 </head>
