@@ -22,6 +22,33 @@
       width: 350px;
     }
 
+    .jug {
+      position: absolute;
+      width: 110px;
+      height: 220px;
+      bottom: 220px;
+      left: 120px;
+      cursor: pointer;
+      transition: all 1s ease-in-out;
+      transform-origin: bottom center;
+      z-index: 10;
+    }
+
+    .jug.pour {
+      transform: rotate(-35deg) translateY(-20px);
+    }
+
+    .jug-body {
+      position: absolute;
+      width: 100%;
+      height: 180px;
+      background: linear-gradient(135deg, #7db9e8 0%, #4682b4 100%);
+      border-radius: 45px 45px 70px 70px / 60px 60px 90px 90px;
+      bottom: 0;
+      overflow: hidden;
+      box-shadow: inset -5px -10px 20px rgba(0,0,0,0.1);
+    }
+
   </style>
 </head>
 <body>
