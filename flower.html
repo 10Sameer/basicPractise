@@ -170,6 +170,32 @@
     <div class="instructions">Click the jug to pour water slowly...</div>
   </div>
 
-  
+  <script>
+    const jug = document.getElementById('jug');
+    const stream = document.getElementById('stream');
+    const glassWater = document.getElementById('glassWater');
+
+    let poured = false;
+
+    jug.addEventListener('click', () => {
+      if (poured) return;
+      poured = true;
+
+      // Tilt jug
+      jug.classList.add('pour');
+
+      // Show water stream
+      stream.style.opacity = '1';
+      stream.style.height = '140px';
+
+      // Fill the glass slowly
+      glassWater.style.height = '100%';
+
+      // Stop stream after 10s
+      setTimeout(() => {
+        stream.style.opacity = '0';
+      }, 10000);
+    });
+  </script>
 </body>
 </html>
